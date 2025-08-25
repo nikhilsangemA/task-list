@@ -11,10 +11,10 @@ const TaskManager = () => {
     title: '',
     description: '',
     priority: 'medium',
-    status: 'pending'
+    status: 'pending' 
   });
 
-  const API_BASE = 'http://localhost:3001/api';
+  const API_BASE = 'http://localhost:5000/api';
 
   const fetchTasks = async () => {
     try {
@@ -109,10 +109,14 @@ const TaskManager = () => {
 
   const getStatusIcon = (status) => {
     switch (status) {
-      case 'completed': return <Check className="w-4 h-4 text-green-600" />;
-      case 'in_progress': return <Clock className="w-4 h-4 text-blue-600" />;
-      case 'pending': return <AlertCircle className="w-4 h-4 text-orange-600" />;
-      default: return <AlertCircle className="w-4 h-4 text-gray-600" />;
+      case 'completed':
+        return <Check className="w-4 h-4 text-green-600" />;
+      case 'in_progress': 
+        return <Clock className="w-4 h-4 text-blue-600" />;
+      case 'pending':
+        return <AlertCircle className="w-4 h-4 text-orange-600" />;
+      default:
+        return <AlertCircle className="w-4 h-4 text-gray-600" />;
     }
   };
 
