@@ -14,7 +14,7 @@ const TaskManager = () => {
     status: 'pending' 
   });
 
-  const API_BASE = 'https://task-list-three-navy.vercel.app/';
+  const API_BASE = 'http://localhost:5000/api';
 
   const fetchTasks = async () => {
     try {
