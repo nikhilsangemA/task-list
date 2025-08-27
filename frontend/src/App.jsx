@@ -14,7 +14,7 @@ const TaskManager = () => {
     status: 'pending'   
   });
 
-  const API_BASE = 'https://task-list-rho-two.vercel.app';
+  const API_BASE = 'http://localhost:5000';
 
   const fetchTasks = async () => {
     try {

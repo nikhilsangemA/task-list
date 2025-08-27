@@ -7,12 +7,13 @@
 const express = require('express');
 const mysql = require('mysql2/promise');
 const cors = require('cors');
+require("dotenv").config();
 
 const app = express();
 const port = 5000;
 
 app.use(express.json());
-app.use(cors());
+app.use(cors({origin : '*'}));
 
 app.get('/', (req, res) => {
   res.send('API is running......... ✅🎉');
@@ -21,10 +22,10 @@ app.get('/', (req, res) => {
 
 // MySQL connection pool (update credentials as needed)
 const pool = mysql.createPool({
-  host: 'localhost',
-  user: 'TK',
-  password: '9814', // Set your MySQL password
-  database: 'task_manager',
+  host: process.env.DB_HOST,
+  user: process.env.DB_USER,
+  password:process.env.DB_PASS, // Set your MySQL password
+  database:process.env.DB_NAME,
   waitForConnections: true,
   connectionLimit: 10,
   queueLimit: 0
