@@ -14,7 +14,7 @@ const TaskManager = () => {
     status: 'pending' 
   });
 
-  const API_BASE = 'https://task-manager-app-zeta-self.vercel.app/api';
+  const API_BASE = 'http://localhost:6000/api';
 
   const fetchTasks = async () => {
     try {
