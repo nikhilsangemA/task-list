@@ -15,7 +15,7 @@ app.use(express.json());
 app.use(cors());
 
 app.get('/', (req, res) => {
-  res.send('API is working ✅');
+  res.send('API is working ✅🎉');
 });
 
 
@@ -137,5 +137,5 @@ app.delete('/api/tasks/:id', async (req, res) => {
 });
 
 app.listen(port, () => {
-  console.log(`Server running on http://localhost:${port}`);
+  console.log(`✅ Server running on http://localhost:${port} successfully 🎉`);
 });
