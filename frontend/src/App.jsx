@@ -11,10 +11,10 @@ const TaskManager = () => {
     title: '',
     description: '',
     priority: 'medium',
-    status: 'pending' 
+    status: 'pending'   
   });
 
-  const API_BASE = 'http://localhost:5000/api';
+  const API_BASE = 'http://localhost:5000';
 
   const fetchTasks = async () => {
     try {

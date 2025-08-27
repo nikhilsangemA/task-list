@@ -15,7 +15,7 @@ app.use(express.json());
 app.use(cors());
 
 app.get('/', (req, res) => {
-  res.send('API is working ✅🎉');
+  res.send('API is running......... ✅🎉');
 });
 
 
@@ -58,7 +58,7 @@ const pool = mysql.createPool({
 // initializeDatabase();
 
 // GET all tasks
-app.get('/api/tasks', async (req, res) => {
+app.get('/tasks', async (req, res) => {
   try {
     const [rows] = await pool.query('SELECT * FROM tasks ORDER BY created_at DESC');
     res.json(rows);
@@ -69,7 +69,7 @@ app.get('/api/tasks', async (req, res) => {
 });
 
 // POST new task
-app.post('/api/tasks', async (req, res) => {
+app.post('/tasks', async (req, res) => {
   const { title, description, priority, status } = req.body;
   try {
     const [result] = await pool.query(
@@ -85,7 +85,7 @@ app.post('/api/tasks', async (req, res) => {
 });
 
 // PUT update task (full update)
-app.put('/api/tasks/:id', async (req, res) => {
+app.put('/tasks/:id', async (req, res) => {
   const { title, description, priority, status } = req.body;
   const { id } = req.params;
   try {
@@ -105,7 +105,7 @@ app.put('/api/tasks/:id', async (req, res) => {
 });
 
 // PATCH update task status only
-app.patch('/api/tasks/:id', async (req, res) => {
+app.patch('/tasks/:id', async (req, res) => {
   const { status } = req.body;
   const { id } = req.params;
   try {
@@ -122,7 +122,7 @@ app.patch('/api/tasks/:id', async (req, res) => {
 });
 
 // DELETE task
-app.delete('/api/tasks/:id', async (req, res) => {
+app.delete('/tasks/:id', async (req, res) => {
   const { id } = req.params;
   try {
     const [result] = await pool.query('DELETE FROM tasks WHERE id = ?', [id]);
